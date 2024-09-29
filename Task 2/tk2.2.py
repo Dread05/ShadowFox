@@ -99,9 +99,9 @@ def get_valid_guess(guessed_letters):
     while True:
         guess = input("Guess a letter: ").lower()
         if len(guess) != 1 or not guess.isalpha():
-            print("Invalid input. Please enter a single alphabetic character.")
+            print("Invalid input. Please enter a single alphabetic character ")
         elif guess in guessed_letters:
-            print("You've already guessed that letter. Try again.")
+            print("You've already guessed that letter ")
         else:
             return guess
 
@@ -121,10 +121,10 @@ def play_hangman():
 
         if guess in secret_word:
             correct_guesses.add(guess)
-            print(f"Good job! {guess} is in the word.\n")
+            print(f"Good job! {guess} is in the word \n")
         else:
             incorrect_guesses.add(guess)
-            print(f"Oops! {guess} is not in the word.\n")
+            print(f"Oops! {guess} is not in the word \n")
         if check_game_status(incorrect_guesses, correct_guesses, secret_word):
             break
 
@@ -132,22 +132,22 @@ def play_hangman():
 
 def play_again():
     while True:
-        response = input("Do you want to play again? (yes/no): ").lower()
-        if response == 'yes':
+        response = input("Do you want to play again?(y/n): ").lower()
+        if response == 'y':
             return True
-        elif response == 'no':
+        elif response == 'n':
             return False
         else:
-            print("Please respond with 'yes' or 'no'.")
+            print("Please respond with 'y'or'n'")
 
 
 
 def main():
-    print("Welcome to Hangman!")
+    print("Welcome to Hangman")
     while True:
         play_hangman()
         if not play_again():
-            print("Thanks for playing! Goodbye!")
+            print("Thanks for playing Goodbye")
             break
 
 if __name__ == '__main__':
